@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rubric Indicator Validation Instrument</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="hero">
+    <div class="eyebrow">EXPERT JUDGE VALIDATION INSTRUMENT</div>
+    <h1>Rubric Indicator Validation</h1>
+    <p>Review each indicator, complete the consideration checklist, and provide a reasoned recommendation.</p>
+  </header>
+  <main class="layout">
+    <aside class="sidebar">
+      <label for="judgeName">Judge name or ID</label>
+      <input id="judgeName" type="text" placeholder="e.g., Judge 01">
+      <label for="judgeAffiliation">Institution / affiliation (optional)</label>
+      <input id="judgeAffiliation" type="text" placeholder="Institution">
+      <label for="indicatorSelect">Go to an indicator</label>
+      <select id="indicatorSelect"></select>
+      <div class="progress-label"><span>Progress</span><strong id="progressText">0 of 40 reviewed</strong></div>
+      <div class="progress-track">
+        <div id="progressBar"></div>
+      </div>
+      <div class="sidebar-actions">
+        <button type="button" id="exportAllBtn" class="secondary full">Download all reviews (CSV)</button>
+      </div>
+      <p class="small-note">Reviews are saved in this browser as you complete them. Click “Download all reviews (CSV)” to export everything at once.</p>
+    </aside>
+    <section class="panel">
+      <div class="topline">
+        <div>
+          <h2>AREA:</h2>
+        </div>
+        <div>
+          <span id="areaBadge" class="badge">Area</span>
+        </div>
+        <div>
+          <span id="indicatorPosition" class="muted"></span>
+        </div>
+      </div>
+      <div class="grid1">
+        <div>
+          <h2>CRITERION:</h2>
+        </div>
+        <div>
+          <p id="criterionTitle"></p>
+        </div>
+      </div>
+      <div class="indicator-box">
+        <div class="field-label">INDICATOR BEING VALIDATED</div>
+        <p id="indicatorText"></p>
+      </div>
+      <div class="section-heading">
+        <div>
+          <h3>Consideration Checklist</h3>
+          <p>Select one response for each statement.</p>
+        </div>
+        <span class="muted">Required</span>
+      </div>
+      <div id="checklist" class="checklist"></div>
+      <div class="section-heading recommendation-heading">
+        <div>
+          <h3>Judge Recommendation</h3>
+          <p>Select one option.</p>
+        </div>
+      </div>
+      <fieldset class="recommendations" id="recommendations">
+        <legend class="sr-only">Recommendation</legend>
+      </fieldset>
+      <div id="otherWrap" class="field hidden">
+        <label for="otherRecommendation">Specify another recommendation</label>
+        <input id="otherRecommendation" type="text" placeholder="Enter the recommendation">
+      </div>
+      <div class="field">
+        <label for="rationale">Rationale for the recommendation</label>
+        <textarea id="rationale" rows="4"
+          placeholder="Briefly explain the reasons for your recommendation..."></textarea>
+      </div>
+      <div class="field">
+        <label for="ambiguousTerms">Potentially ambiguous terms (optional)</label>
+        <textarea id="ambiguousTerms" rows="2"
+          placeholder="Identify terms or expressions that could be interpreted in different ways."></textarea>
+      </div>
+      <div class="field">
+        <label for="revisionSuggestion">Suggested wording or additional comments (optional)</label>
+        <textarea id="revisionSuggestion" rows="3"
+          placeholder="If appropriate, suggest a specific revision or add comments."></textarea>
+      </div>
+      <div id="statusMessage" role="status" aria-live="polite"></div>
+      <div class="footer-actions">
+        <button type="button" id="prevBtn" class="secondary">
+          ← Previous
+        </button>
+        <button type="button" id="saveBtn" class="primary">Save review</button>
+        <button type="button" id="nextBtn" class="secondary">Next →</button>
+      </div>
+    </section>
+  </main>
+  <footer>Digital instrument based on “Validation Consideration Checklist.xlsx”.</footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
